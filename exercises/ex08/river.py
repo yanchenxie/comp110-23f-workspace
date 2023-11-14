@@ -5,6 +5,10 @@ from exercises.ex08.bear import Bear
 
 class River:
     
+    day: int
+    bears: list[Bear]
+    fish: list[Fish]
+    
     def __init__(self, num_fish: int, num_bears:int):
         """New River with num_fish Fish and num_bears Bears"""
         self.day: int = 0
@@ -32,6 +36,11 @@ class River:
         return None
     
     def view_river(self):
+        """Print description of river on day x."""
+        output: str = f"~~~ Day {self.day}: ~~~:\n"
+        output += f"Fish population: {self.fish}:\n"
+        output += f"Bear population: {self.bears}"
+        print(output)
         return None
             
     def one_river_day(self):
